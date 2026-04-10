@@ -1,15 +1,15 @@
 window.siteData = {
   name: "Annicet Razafindratovolahy",
-  role: "Researcher in Computer Vision and Robust Visual Modeling",
+  role: "PhD Candidate in Software Engineering",
   institution: "University of Electronic Science and Technology of China",
   location: "Chengdu, China",
   email: "annicet.razafindratovolahy@std.uestc.edu.cn",
   heroSummary:
-    "I work on robust visual modeling under degradation, noise, and distribution shift, with a focus on image enhancement, image restoration, adaptive learning, and trustworthy multimodal systems.",
+    "My research lies in computer vision and robust visual modeling, with interests spanning image enhancement, image restoration, multimodal systems, and image and video analysis under challenging real-world conditions.",
   intro: [
-    "My research focuses on building reliable visual systems when inputs are imperfect, degraded, noisy, or manipulated. I am especially interested in image enhancement and restoration methods that remain stable under real-world conditions rather than only controlled benchmarks.",
-    "Across my work, I combine analytical formulations with learning-based methods to improve robustness, controllability, and generalization. This includes low-light image enhancement, exposure-aware learning, efficient model design, and structured approaches to multimodal image editing.",
-    "More broadly, I am interested in trustworthy AI, adaptive learning, and multimodal systems that behave predictably under uncertainty and shift."
+    "I am a PhD candidate at the University of Electronic Science and Technology of China, where I work on robust visual modeling under degradation, noise, and distribution shift. My research is motivated by a simple question: how can visual systems remain reliable when real data is imperfect, unstable, or manipulated?",
+    "Most of my recent work has focused on image enhancement and restoration, especially low-light vision, exposure-aware learning, lightweight modeling, and controllable formulations that improve degraded content while preserving reliable information. I combine analytical ideas with learning-based methods to improve stability, interpretability, and generalization.",
+    "Beyond enhancement, I am broadly interested in computer vision, multimodal systems, image and video analysis, and trustworthy AI. I am especially drawn to problems where robustness, controllability, and real-world deployment constraints matter as much as raw benchmark performance."
   ],
   navigation: [
     { label: "About", href: "#about" },
@@ -20,32 +20,26 @@ window.siteData = {
   ],
   links: [
     { label: "Email", href: "mailto:annicet.razafindratovolahy@std.uestc.edu.cn", primary: true },
-    { label: "Google Scholar", href: "https://scholar.google.com/" },
+    { label: "Google Scholar", href: "https://scholar.google.com/citations?user=AYeYpwYAAAAJ&hl=fr" },
     { label: "CV", href: "#", disabled: true }
   ],
   stats: [
     { value: "6+", label: "Papers and manuscripts" },
-    { value: "3", label: "Research themes" },
     { value: "4.0/4.0", label: "PhD GPA" },
-    { value: "2026", label: "Expected defense" }
+    { value: "June 2026", label: "Expected defense" },
+    { value: "UESTC", label: "PhD institution" }
   ],
-  researchThemes: [
-    {
-      title: "Reliable image enhancement and restoration",
-      text:
-        "I develop methods for low-light enhancement and restoration that improve degraded content while preserving reliable visual information, structure, and tonal consistency."
-    },
-    {
-      title: "Adaptive learning under imperfect inputs",
-      text:
-        "A central goal in my work is to design objectives and formulations that remain effective when images are noisy, ambiguous, shifted, or only weakly supervised."
-    },
-    {
-      title: "Trustworthy and controllable multimodal systems",
-      text:
-        "Beyond low-level vision, I am interested in structured multimodal systems where image transformation follows explicit intent, planning, and robust control rather than opaque generation alone."
-    }
+  focusAreas: [
+    "Computer vision",
+    "Multimodal systems",
+    "Image analysis",
+    "Video analysis",
+    "Image enhancement",
+    "Image restoration",
+    "Robust learning",
+    "Trustworthy AI"
   ],
+  selectedPublications: ["tovo", "nonlinear-function", "smile", "prompt2edit"],
   publications: [
     {
       slug: "tovo",
@@ -185,6 +179,24 @@ window.siteData = {
           heading: "Context",
           body:
             "It reflects a broader interest in adaptation under shift, beyond standard image enhancement scenarios."
+        }
+      ]
+    },
+    {
+      slug: "under-review",
+      title: "Additional manuscripts under review",
+      authors: "Including submissions to IEEE TPAMI, IEEE Sensors Journal, and Signal Processing",
+      venue: "Under review",
+      summary:
+        "Ongoing work on robust visual modeling, enhancement, and related perception problems is currently under review in several venues.",
+      pdf: "",
+      bibtex:
+        "@misc{razafindratovolahy_under_review,\n  author={Razafindratovolahy, Annicet and collaborators},\n  title={Additional manuscripts under review},\n  note={Including submissions to IEEE TPAMI, IEEE Sensors Journal, and Signal Processing}\n}",
+      sections: [
+        {
+          heading: "Overview",
+          body:
+            "In addition to the listed papers, I have ongoing manuscripts under review in major venues. These extend the same broader agenda around robustness, adaptive modeling, and reliable visual systems."
         }
       ]
     }

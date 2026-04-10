@@ -47,9 +47,9 @@ function renderLinks() {
   const contact = byId("contact-actions");
   data.links.forEach((link) => hero.appendChild(createLink(link)));
   contact.appendChild(createLink({ label: data.email, href: `mailto:${data.email}`, primary: true }));
-  data.links.filter((link) => !link.primary && !link.disabled).forEach((link) => {
-    contact.appendChild(createLink(link));
-  });
+  data.links
+    .filter((link) => !link.primary && !link.disabled)
+    .forEach((link) => contact.appendChild(createLink(link)));
 }
 
 function renderStats() {
@@ -73,22 +73,11 @@ function renderAbout() {
 
 function renderKeywords() {
   const target = byId("keyword-list");
-  data.intro.length;
-  data.researchThemes.forEach((theme) => {
+  data.focusAreas.forEach((area) => {
     const item = document.createElement("span");
     item.className = "keyword";
-    item.textContent = theme.title;
+    item.textContent = area;
     target.appendChild(item);
-  });
-}
-
-function renderThemes() {
-  const target = byId("theme-grid");
-  data.researchThemes.forEach((theme) => {
-    const card = document.createElement("article");
-    card.className = "theme-card";
-    card.innerHTML = `<h3>${theme.title}</h3><p>${theme.text}</p>`;
-    target.appendChild(card);
   });
 }
 
@@ -100,11 +89,14 @@ function openCitation(item) {
 
 function renderPublications() {
   const target = byId("publication-grid");
-  data.publications.forEach((item) => {
+  const selected = data.publications.filter((item) => data.selectedPublications.includes(item.slug));
+  selected.forEach((item) => {
     const card = document.createElement("article");
     card.className = "publication-card";
     const articleHref = `article.html?slug=${encodeURIComponent(item.slug)}`;
-    const pdfHref = item.pdf ? `viewer.html?file=${encodeURIComponent(item.pdf)}&title=${encodeURIComponent(item.title)}` : "";
+    const pdfHref = item.pdf
+      ? `viewer.html?file=${encodeURIComponent(item.pdf)}&title=${encodeURIComponent(item.title)}`
+      : "";
     card.innerHTML = `
       <div class="publication-top">
         <span class="publication-venue">${item.venue}</span>
@@ -171,7 +163,6 @@ renderLinks();
 renderStats();
 renderAbout();
 renderKeywords();
-renderThemes();
 renderPublications();
 renderList("education-list", data.experience.education);
 renderList("research-list", data.experience.research);

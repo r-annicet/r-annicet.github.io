@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PDF Viewer</title>
+    <title>Publications</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,19 +23,30 @@
 
       <main class="viewer-page">
         <section class="article-page-hero">
-          <p class="eyebrow">PDF</p>
-          <h1 id="viewer-title"></h1>
+          <p class="eyebrow">Publications</p>
+          <h1>All publications</h1>
+          <p class="article-meta">A complete publication list in a compact scholar-style format.</p>
         </section>
-        <section class="section pdf-section">
-          <iframe id="pdf-frame" class="pdf-frame" title="PDF viewer"></iframe>
-          <p class="pdf-fallback">
-            If the embedded preview is blocked by your browser, use
-            <a id="pdf-direct-link" href="#">this direct PDF link</a>.
-          </p>
+
+        <section class="section">
+          <div class="publication-list" id="publication-list"></div>
         </section>
       </main>
     </div>
 
-    <script src="viewer.js"></script>
+    <dialog class="citation-modal" id="citation-modal">
+      <div class="citation-inner">
+        <div class="citation-topbar">
+          <button class="button" id="citation-copy" type="button">Copy BibTeX</button>
+          <button class="button" id="citation-close" type="button">Close</button>
+        </div>
+        <p class="eyebrow">BibTeX</p>
+        <h2 id="citation-title"></h2>
+        <pre id="citation-code"></pre>
+      </div>
+    </dialog>
+
+    <script src="site-data.js"></script>
+    <script src="publications.js"></script>
   </body>
 </html>
