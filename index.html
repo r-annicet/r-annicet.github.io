@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Academic Portfolio</title>
+    <title>Research Portfolio</title>
     <meta
       name="description"
-      content="Modern academic website template for a PhD student applying for postdoctoral positions."
+      content="Research website for Annicet Razafindratovolahy, focusing on robust visual modeling, image enhancement, and trustworthy AI."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +21,7 @@
       <header class="site-header">
         <a class="brand" href="#top" aria-label="Homepage">
           <span class="brand-mark">A</span>
-          <span id="brand-name">Your Name</span>
+          <span id="brand-name">Annicet Razafindratovolahy</span>
         </a>
         <nav class="site-nav" id="site-nav"></nav>
       </header>
@@ -29,8 +29,8 @@
       <main id="top">
         <section class="hero reveal">
           <div class="hero-copy">
-            <p class="eyebrow" id="hero-role">PhD Candidate</p>
-            <h1 id="hero-name">Your Name</h1>
+            <p class="eyebrow" id="hero-role"></p>
+            <h1 id="hero-name"></h1>
             <p class="hero-tagline" id="hero-tagline"></p>
             <p class="hero-summary" id="hero-summary"></p>
             <div class="hero-actions" id="hero-actions"></div>
@@ -38,9 +38,11 @@
           </div>
           <aside class="hero-panel">
             <div class="profile-card">
-              <p class="profile-kicker">Research Focus</p>
-              <h2 id="focus-title"></h2>
-              <p id="focus-description"></p>
+              <p class="profile-kicker">Research Profile</p>
+              <h2>Reliable vision under imperfect conditions</h2>
+              <p>
+                I study enhancement, restoration, adaptive learning, and multimodal control with an emphasis on robustness, interpretability, and real-world deployment constraints.
+              </p>
             </div>
             <div class="metrics-grid" id="metrics-grid"></div>
           </aside>
@@ -49,12 +51,10 @@
         <section class="section reveal" id="about">
           <div class="section-heading">
             <p class="eyebrow">About</p>
-            <h2>Research profile</h2>
+            <h2>Research identity</h2>
           </div>
           <div class="about-grid">
-            <div class="prose-card">
-              <p id="about-text"></p>
-            </div>
+            <div class="prose-card" id="about-block"></div>
             <div class="chip-panel">
               <h3>Keywords</h3>
               <div class="chip-list" id="keywords"></div>
@@ -62,12 +62,12 @@
           </div>
         </section>
 
-        <section class="section reveal" id="highlights">
+        <section class="section reveal" id="research">
           <div class="section-heading">
-            <p class="eyebrow">Highlights</p>
-            <h2>Selected work</h2>
+            <p class="eyebrow">Research</p>
+            <h2>Research themes</h2>
           </div>
-          <div class="card-grid" id="highlights-grid"></div>
+          <div class="card-grid" id="research-grid"></div>
         </section>
 
         <section class="section reveal" id="publications">
@@ -75,31 +75,33 @@
             <p class="eyebrow">Publications</p>
             <h2>Selected papers</h2>
           </div>
-          <div class="stack-list" id="publications-list"></div>
+          <div class="card-grid" id="publications-list"></div>
         </section>
 
-        <section class="section reveal" id="experience">
+        <section class="section reveal" id="background">
           <div class="section-heading">
             <p class="eyebrow">Experience</p>
-            <h2>Academic path</h2>
+            <h2>Academic path and professional experience</h2>
           </div>
-          <div class="timeline" id="timeline"></div>
-        </section>
-
-        <section class="section dual reveal">
-          <div id="teaching-section">
-            <div class="section-heading compact">
-              <p class="eyebrow">Teaching</p>
-              <h2>Mentoring and instruction</h2>
-            </div>
-            <div class="stack-list" id="teaching-list"></div>
-          </div>
-          <div id="awards-section">
-            <div class="section-heading compact">
-              <p class="eyebrow">Recognition</p>
-              <h2>Awards and service</h2>
-            </div>
-            <div class="stack-list" id="awards-list"></div>
+          <div class="triple-grid">
+            <article class="stack-card">
+              <div class="stack-card-header">
+                <h3>Education</h3>
+              </div>
+              <div class="stack-list compact" id="education-list"></div>
+            </article>
+            <article class="stack-card">
+              <div class="stack-card-header">
+                <h3>Experience</h3>
+              </div>
+              <div class="stack-list compact" id="experience-list"></div>
+            </article>
+            <article class="stack-card">
+              <div class="stack-card-header">
+                <h3>Leadership & Honors</h3>
+              </div>
+              <div class="stack-list compact" id="recognition-list"></div>
+            </article>
           </div>
         </section>
 
@@ -107,7 +109,7 @@
           <div class="contact-banner">
             <div>
               <p class="eyebrow">Contact</p>
-              <h2>Open to postdoctoral opportunities</h2>
+              <h2>Research conversations are always welcome</h2>
               <p id="contact-text"></p>
             </div>
             <div class="hero-actions" id="contact-actions"></div>
@@ -120,6 +122,19 @@
       </footer>
     </div>
 
+    <dialog class="citation-modal" id="citation-modal">
+      <div class="citation-inner">
+        <div class="citation-topbar">
+          <button class="button" id="citation-copy" type="button">Copy BibTeX</button>
+          <button class="button modal-close" id="citation-close" type="button">Close</button>
+        </div>
+        <p class="eyebrow">BibTeX</p>
+        <h2 id="citation-title"></h2>
+        <pre id="citation-code"></pre>
+      </div>
+    </dialog>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.min.js"></script>
     <script src="site-data.js"></script>
     <script src="script.js"></script>
   </body>

@@ -1,5 +1,11 @@
-const data = window.siteData;
+const pdfjsLib = window["pdfjs-dist/build/pdf"];
 
+if (pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.worker.min.js";
+}
+
+const data = window.siteData;
 const byId = (id) => document.getElementById(id);
 
 function createLink(link, className = "button") {
@@ -9,8 +15,8 @@ function createLink(link, className = "button") {
 
   if (link.disabled) {
     anchor.href = "#";
-    anchor.setAttribute("aria-disabled", "true");
     anchor.classList.add("disabled");
+    anchor.setAttribute("aria-disabled", "true");
     return anchor;
   }
 
@@ -24,62 +30,68 @@ function createLink(link, className = "button") {
   return anchor;
 }
 
-function fillText() {
-  document.title = `${data.name} | Academic Portfolio`;
-  document.querySelector(".brand-mark").textContent = data.name.charAt(0).toUpperCase();
+function fillHero() {
+  document.title = `${data.name} | Research`;
   byId("brand-name").textContent = data.name;
+  document.querySelector(".brand-mark").textContent = data.name.charAt(0).toUpperCase();
   byId("hero-role").textContent = data.role;
   byId("hero-name").textContent = data.name;
   byId("hero-tagline").textContent = data.tagline;
   byId("hero-summary").textContent = data.summary;
-  byId("focus-title").textContent = data.focus.title;
-  byId("focus-description").textContent = data.focus.description;
-  byId("about-text").textContent = data.about;
   byId("contact-text").textContent = data.contact;
   byId("footer-text").textContent = data.footer;
 }
 
 function renderNavigation() {
   const nav = byId("site-nav");
-
   data.navigation.forEach((item) => {
     const link = document.createElement("a");
     link.href = item.href;
     link.textContent = item.label;
+    link.dataset.section = item.href.slice(1);
     nav.appendChild(link);
   });
 }
 
-function renderActions(targetId, links) {
-  const target = byId(targetId);
-  links.forEach((link) => target.appendChild(createLink(link)));
+function renderHeroActions() {
+  const heroActions = byId("hero-actions");
+  data.heroLinks.forEach((link) => heroActions.appendChild(createLink(link)));
+
+  const contactActions = byId("contact-actions");
+  contactActions.appendChild(
+    createLink({ label: data.email, href: `mailto:${data.email}`, primary: true })
+  );
+  data.heroLinks
+    .filter((link) => !link.primary && !link.disabled)
+    .slice(0, 2)
+    .forEach((link) => contactActions.appendChild(createLink(link)));
 }
 
-function renderMeta() {
-  const meta = byId("hero-meta");
-  const details = [data.institution, data.location, ...data.meta];
-
-  details.forEach((item) => {
+function renderHeroMeta() {
+  const target = byId("hero-meta");
+  [data.institution, data.location, "Robust visual modeling", "Image enhancement and restoration"].forEach((item) => {
     const li = document.createElement("li");
     li.textContent = item;
-    meta.appendChild(li);
+    target.appendChild(li);
   });
 }
 
 function renderMetrics() {
-  const grid = byId("metrics-grid");
+  const target = byId("metrics-grid");
   data.metrics.forEach((metric) => {
     const card = document.createElement("article");
     card.className = "metric-card";
+    card.innerHTML = `<strong>${metric.value}</strong><span>${metric.label}</span>`;
+    target.appendChild(card);
+  });
+}
 
-    const value = document.createElement("strong");
-    value.textContent = metric.value;
-
-    const label = document.createElement("span");
-    label.textContent = metric.label;
-
-    card.append(value, label);
-    grid.appendChild(card);
+function renderAbout() {
+  const block = byId("about-block");
+  data.about.forEach((paragraph) => {
+    const p = document.createElement("p");
+    p.textContent = paragraph;
+    block.appendChild(p);
   });
 }
 
@@ -93,77 +105,100 @@ function renderKeywords() {
   });
 }
 
-function renderHighlights() {
-  const target = byId("highlights-grid");
-  data.highlights.forEach((item) => {
-    const card = document.createElement("article");
-    card.className = "feature-card";
-    card.innerHTML = `<h3>${item.title}</h3><p>${item.text}</p>`;
-    target.appendChild(card);
-  });
+function buildCard(item, type) {
+  const card = document.createElement("article");
+  card.className = "article-card";
+  const articleHref = `article.html?slug=${encodeURIComponent(item.slug)}&type=${type}`;
+  const pdfHref = item.pdf
+    ? `viewer.html?file=${encodeURIComponent(item.pdf)}&title=${encodeURIComponent(item.title)}`
+    : "";
+
+  card.innerHTML = `
+    <div class="article-figure">
+      <canvas class="pdf-thumb" data-pdf="${item.pdf || ""}" aria-label="${item.title} preview"></canvas>
+      <div class="figure-overlay">
+        <span class="figure-year">${item.year}</span>
+      </div>
+    </div>
+    <div class="article-body">
+      <p class="eyebrow article-kicker">${type === "story" ? "Research Theme" : "Publication"}</p>
+      <h3>${item.title}</h3>
+      <p class="venue">${item.subtitle || item.venue || ""}</p>
+      ${item.authors ? `<p class="muted">${item.authors}</p>` : ""}
+      <p>${item.cardText}</p>
+      <div class="article-actions">
+        <a class="button primary" href="${articleHref}">Read More</a>
+        ${item.pdf ? `<a class="button" href="${pdfHref}">View PDF</a>` : ""}
+        <button class="button cite-button" type="button">Cite</button>
+      </div>
+    </div>
+  `;
+
+  card.querySelector(".cite-button").addEventListener("click", () => openCitation(item));
+  return card;
+}
+
+function renderResearch() {
+  const target = byId("research-grid");
+  data.researchStories.forEach((item) => target.appendChild(buildCard(item, "story")));
 }
 
 function renderPublications() {
   const target = byId("publications-list");
-
-  data.publications.forEach((publication) => {
-    const item = document.createElement("article");
-    item.className = "stack-card";
-
-    const linkMarkup = publication.links
-      .map((link) =>
-        link.href === "#"
-          ? `<span class="inline-link muted">${link.label}</span>`
-          : `<a class="inline-link" href="${link.href}" target="_blank" rel="noreferrer">${link.label}</a>`
-      )
-      .join("");
-
-    item.innerHTML = `
-      <div class="stack-card-header">
-        <div>
-          <h3>${publication.title}</h3>
-          <p class="muted">${publication.authors}</p>
-          <p class="venue">${publication.venue}</p>
-        </div>
-      </div>
-      <p>${publication.description}</p>
-      <div class="inline-links">${linkMarkup}</div>
-    `;
-
-    target.appendChild(item);
-  });
+  data.publications.forEach((item) => target.appendChild(buildCard(item, "publication")));
 }
 
-function renderTimeline() {
-  const target = byId("timeline");
-  data.experience.forEach((entry) => {
-    const item = document.createElement("article");
-    item.className = "timeline-item";
-    item.innerHTML = `
-      <span class="timeline-period">${entry.period}</span>
-      <div class="timeline-card">
-        <h3>${entry.title}</h3>
-        <p class="venue">${entry.organization}</p>
-        <p>${entry.text}</p>
-      </div>
-    `;
-    target.appendChild(item);
-  });
-}
-
-function renderStackList(targetId, items) {
+function renderList(targetId, items) {
   const target = byId(targetId);
   items.forEach((item) => {
-    const card = document.createElement("article");
-    card.className = "stack-card";
-    card.innerHTML = `
-      <div class="stack-card-header">
-        <h3>${item.title}</h3>
-        <span class="tag">${item.meta}</span>
-      </div>
-      <p>${item.text}</p>
-    `;
+    const card = document.createElement("div");
+    card.className = "mini-item";
+    card.textContent = item;
     target.appendChild(card);
+  });
+}
+
+function openCitation(item) {
+  const modal = byId("citation-modal");
+  byId("citation-title").textContent = item.title;
+  byId("citation-code").textContent = item.bibtex;
+  modal.showModal();
+}
+
+function setupCitationModal() {
+  const modal = byId("citation-modal");
+  byId("citation-close").addEventListener("click", () => modal.close());
+  byId("citation-copy").addEventListener("click", async () => {
+    await navigator.clipboard.writeText(byId("citation-code").textContent);
+    byId("citation-copy").textContent = "Copied";
+    setTimeout(() => {
+      byId("citation-copy").textContent = "Copy BibTeX";
+    }, 1400);
+  });
+}
+
+async function renderPdfThumbnail(canvas, pdfPath) {
+  if (!pdfPath || !pdfjsLib) {
+    canvas.parentElement.classList.add("no-preview");
+    return;
+  }
+
+  try {
+    const pdf = await pdfjsLib.getDocument(pdfPath).promise;
+    const page = await pdf.getPage(1);
+    const viewport = page.getViewport({ scale: 0.55 });
+    const context = canvas.getContext("2d");
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    await page.render({ canvasContext: context, viewport }).promise;
+  } catch {
+    canvas.parentElement.classList.add("no-preview");
+  }
+}
+
+function renderThumbs() {
+  document.querySelectorAll(".pdf-thumb").forEach((canvas) => {
+    renderPdfThumbnail(canvas, canvas.dataset.pdf);
   });
 }
 
@@ -177,29 +212,46 @@ function revealOnScroll() {
         }
       });
     },
-    { threshold: 0.2 }
+    { threshold: 0.18 }
   );
 
-  document.querySelectorAll(".reveal").forEach((element) => {
-    observer.observe(element);
-  });
+  document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
 }
 
-fillText();
+function highlightActiveSection() {
+  const sections = document.querySelectorAll("main section[id]");
+  const navLinks = [...document.querySelectorAll(".site-nav a")];
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        navLinks.forEach((link) => {
+          link.classList.toggle("active", link.dataset.section === entry.target.id);
+        });
+      });
+    },
+    { rootMargin: "-30% 0px -55% 0px", threshold: 0.1 }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}
+
+fillHero();
 renderNavigation();
-renderActions("hero-actions", data.links);
-renderActions("contact-actions", [
-  { label: data.email, href: `mailto:${data.email}`, primary: true },
-  ...data.links
-    .filter((link) => !link.primary && link.label !== "Email Me" && !link.disabled)
-    .slice(0, 2)
-]);
-renderMeta();
+renderHeroActions();
+renderHeroMeta();
 renderMetrics();
+renderAbout();
 renderKeywords();
-renderHighlights();
+renderResearch();
 renderPublications();
-renderTimeline();
-renderStackList("teaching-list", data.teaching);
-renderStackList("awards-list", data.awards);
+renderList("education-list", data.background.education);
+renderList("experience-list", data.background.experience);
+renderList("recognition-list", data.background.recognition);
+setupCitationModal();
+renderThumbs();
 revealOnScroll();
+highlightActiveSection();
