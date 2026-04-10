@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academic Portfolio</title>
+    <meta
+      name="description"
+      content="Modern academic website template for a PhD student applying for postdoctoral positions."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="Homepage">
+          <span class="brand-mark">A</span>
+          <span id="brand-name">Your Name</span>
+        </a>
+        <nav class="site-nav" id="site-nav"></nav>
+      </header>
+
+      <main id="top">
+        <section class="hero reveal">
+          <div class="hero-copy">
+            <p class="eyebrow" id="hero-role">PhD Candidate</p>
+            <h1 id="hero-name">Your Name</h1>
+            <p class="hero-tagline" id="hero-tagline"></p>
+            <p class="hero-summary" id="hero-summary"></p>
+            <div class="hero-actions" id="hero-actions"></div>
+            <ul class="hero-meta" id="hero-meta"></ul>
+          </div>
+          <aside class="hero-panel">
+            <div class="profile-card">
+              <p class="profile-kicker">Research Focus</p>
+              <h2 id="focus-title"></h2>
+              <p id="focus-description"></p>
+            </div>
+            <div class="metrics-grid" id="metrics-grid"></div>
+          </aside>
+        </section>
+
+        <section class="section reveal" id="about">
+          <div class="section-heading">
+            <p class="eyebrow">About</p>
+            <h2>Research profile</h2>
+          </div>
+          <div class="about-grid">
+            <div class="prose-card">
+              <p id="about-text"></p>
+            </div>
+            <div class="chip-panel">
+              <h3>Keywords</h3>
+              <div class="chip-list" id="keywords"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="highlights">
+          <div class="section-heading">
+            <p class="eyebrow">Highlights</p>
+            <h2>Selected work</h2>
+          </div>
+          <div class="card-grid" id="highlights-grid"></div>
+        </section>
+
+        <section class="section reveal" id="publications">
+          <div class="section-heading">
+            <p class="eyebrow">Publications</p>
+            <h2>Selected papers</h2>
+          </div>
+          <div class="stack-list" id="publications-list"></div>
+        </section>
+
+        <section class="section reveal" id="experience">
+          <div class="section-heading">
+            <p class="eyebrow">Experience</p>
+            <h2>Academic path</h2>
+          </div>
+          <div class="timeline" id="timeline"></div>
+        </section>
+
+        <section class="section dual reveal">
+          <div id="teaching-section">
+            <div class="section-heading compact">
+              <p class="eyebrow">Teaching</p>
+              <h2>Mentoring and instruction</h2>
+            </div>
+            <div class="stack-list" id="teaching-list"></div>
+          </div>
+          <div id="awards-section">
+            <div class="section-heading compact">
+              <p class="eyebrow">Recognition</p>
+              <h2>Awards and service</h2>
+            </div>
+            <div class="stack-list" id="awards-list"></div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="contact">
+          <div class="contact-banner">
+            <div>
+              <p class="eyebrow">Contact</p>
+              <h2>Open to postdoctoral opportunities</h2>
+              <p id="contact-text"></p>
+            </div>
+            <div class="hero-actions" id="contact-actions"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p id="footer-text"></p>
+      </footer>
+    </div>
+
+    <script src="site-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
