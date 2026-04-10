@@ -1,130 +1,49 @@
 window.siteData = {
   name: "Annicet Razafindratovolahy",
-  role: "PhD Candidate in Computer Vision",
+  role: "Researcher in Computer Vision and Robust Visual Modeling",
   institution: "University of Electronic Science and Technology of China",
   location: "Chengdu, China",
   email: "annicet.razafindratovolahy@std.uestc.edu.cn",
-  tagline:
-    "Robust visual modeling under degradation, noise, and distribution shift.",
-  summary:
-    "I work on reliable and adaptive learning for image enhancement and restoration, with broader interests in trustworthy AI, multimodal systems, and robustness under imperfect or manipulated inputs. My research combines analytical formulations with learning-based methods to improve model stability, controllability, and generalization in real-world settings.",
-  heroLinks: [
-    { label: "Google Scholar", href: "https://scholar.google.com/" },
-    { label: "Email", href: "mailto:annicet.razafindratovolahy@std.uestc.edu.cn", primary: true },
-    { label: "CV", href: "#", disabled: true }
+  heroSummary:
+    "I work on robust visual modeling under degradation, noise, and distribution shift, with a focus on image enhancement, image restoration, adaptive learning, and trustworthy multimodal systems.",
+  intro: [
+    "My research focuses on building reliable visual systems when inputs are imperfect, degraded, noisy, or manipulated. I am especially interested in image enhancement and restoration methods that remain stable under real-world conditions rather than only controlled benchmarks.",
+    "Across my work, I combine analytical formulations with learning-based methods to improve robustness, controllability, and generalization. This includes low-light image enhancement, exposure-aware learning, efficient model design, and structured approaches to multimodal image editing.",
+    "More broadly, I am interested in trustworthy AI, adaptive learning, and multimodal systems that behave predictably under uncertainty and shift."
   ],
   navigation: [
     { label: "About", href: "#about" },
     { label: "Research", href: "#research" },
     { label: "Publications", href: "#publications" },
-    { label: "Experience", href: "#background" },
+    { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" }
   ],
-  metrics: [
-    { value: "6+", label: "Manuscripts and papers" },
+  links: [
+    { label: "Email", href: "mailto:annicet.razafindratovolahy@std.uestc.edu.cn", primary: true },
+    { label: "Google Scholar", href: "https://scholar.google.com/" },
+    { label: "CV", href: "#", disabled: true }
+  ],
+  stats: [
+    { value: "6+", label: "Papers and manuscripts" },
     { value: "3", label: "Research themes" },
-    { value: "4.0/4.0", label: "PhD GPA at UESTC" },
-    { value: "2026", label: "Expected PhD defense" }
+    { value: "4.0/4.0", label: "PhD GPA" },
+    { value: "2026", label: "Expected defense" }
   ],
-  about: [
-    "My research focuses on robust visual modeling in the presence of degradation, noise, and distribution shifts. I am particularly interested in building enhancement and restoration systems that remain reliable when images are imperfect, ambiguous, or manipulated.",
-    "Across my work, I study controllable enhancement, exposure-aware optimization, lightweight image restoration, and adaptive learning strategies that improve both visual quality and model robustness. I care about methods that are not only strong in benchmark settings, but also stable, interpretable, and useful under real deployment constraints.",
-    "More broadly, I am interested in trustworthy AI, multimodal systems, and learning under imperfect inputs, especially when analytical structure can strengthen learned models."
-  ],
-  keywords: [
-    "Image enhancement",
-    "Image restoration",
-    "Robust learning",
-    "Distribution shift",
-    "Trustworthy AI",
-    "Multimodal systems",
-    "Low-light vision",
-    "Adaptive modeling"
-  ],
-  researchStories: [
+  researchThemes: [
     {
-      slug: "robust-enhancement",
-      title: "Robust enhancement under real-world degradation",
-      subtitle: "Region-adaptive, exposure-aware, and reliable visual modeling",
-      cardText:
-        "A research thread on enhancement methods that selectively improve degraded content while preserving reliable information and structural consistency.",
-      pdf: "papers/EA-NACFE-REVISED.pdf",
-      year: "Research Theme",
-      bibtex:
-        "@misc{razafindratovolahy_robust_enhancement,\n  author = {Razafindratovolahy, Annicet},\n  title = {Robust enhancement under real-world degradation},\n  note = {Research theme across multiple manuscripts}\n}",
-      sections: [
-        {
-          heading: "Overview",
-          body:
-            "A central theme in my work is that enhancement should not be uniformly aggressive. In real scenes, some regions are degraded while others already contain reliable visual evidence. My research therefore explores adaptive formulations that improve difficult content without disturbing stable structure, color, and detail."
-        },
-        {
-          heading: "Methodological direction",
-          body:
-            "This line of work combines analytical nonlinear modeling, edge-aware refinement, exposure-sensitive objectives, and lightweight learning formulations. The goal is to make enhancement both effective and dependable, especially when illumination is poor and the signal is fragile."
-        },
-        {
-          heading: "Why it matters",
-          body:
-            "Reliable enhancement is not only a perceptual problem. It directly affects downstream interpretation, robustness, and trust in visual systems used in practical environments such as robotics, sensing, and decision-support pipelines."
-        }
-      ]
+      title: "Reliable image enhancement and restoration",
+      text:
+        "I develop methods for low-light enhancement and restoration that improve degraded content while preserving reliable visual information, structure, and tonal consistency."
     },
     {
-      slug: "control-and-adaptation",
-      title: "Control-based and adaptive image modeling",
-      subtitle: "Treating image attributes as controllable signals",
-      cardText:
-        "A second thread focused on control-based modeling strategies for adaptable solutions across low-level vision and related domains.",
-      pdf: "papers/LightCtrl-paper.pdf",
-      year: "Research Theme",
-      bibtex:
-        "@misc{razafindratovolahy_control_adaptation,\n  author = {Razafindratovolahy, Annicet},\n  title = {Control-based and adaptive image modeling},\n  note = {Research theme across ongoing and completed work}\n}",
-      sections: [
-        {
-          heading: "Overview",
-          body:
-            "I am interested in treating visual attributes as controllable signals rather than fixed side effects of enhancement models. This perspective helps create methods that are more adaptable across domains and more transparent in how visual change is produced."
-        },
-        {
-          heading: "Applications",
-          body:
-            "The same modeling viewpoint can support work in medical imaging, remote sensing, robotics, and other settings where visual degradation and domain variability matter. It creates a bridge between image enhancement, adaptive learning, and trustworthy deployment."
-        },
-        {
-          heading: "Outlook",
-          body:
-            "This theme naturally extends toward broader robust perception problems, especially when systems must remain stable under shifts in illumination, content, or acquisition conditions."
-        }
-      ]
+      title: "Adaptive learning under imperfect inputs",
+      text:
+        "A central goal in my work is to design objectives and formulations that remain effective when images are noisy, ambiguous, shifted, or only weakly supervised."
     },
     {
-      slug: "multimodal-editing",
-      title: "From restoration to multimodal editing",
-      subtitle: "Planning and control in vision-language image manipulation",
-      cardText:
-        "Recent work connects low-level visual reliability with more semantic and controllable image transformation through multimodal reasoning.",
-      pdf: "papers/prompt2edit-paper.pdf",
-      year: "Research Theme",
-      bibtex:
-        "@misc{razafindratovolahy_multimodal_editing,\n  author = {Razafindratovolahy, Annicet},\n  title = {From restoration to multimodal editing},\n  note = {Research theme connecting robust vision and multimodal control}\n}",
-      sections: [
-        {
-          heading: "Overview",
-          body:
-            "My broader interests extend from restoration to multimodal image editing, especially when visual changes must follow structured goals rather than uncontrolled generation. This connects low-level reliability with higher-level user intent."
-        },
-        {
-          heading: "Planning and reasoning",
-          body:
-            "Prompt-based editing becomes more useful when image transformations are broken into explicit, controllable steps. That perspective motivates work on symbolic planning and structured editing pipelines for vision-language systems."
-        },
-        {
-          heading: "Longer-term interest",
-          body:
-            "This direction supports a larger research agenda on trustworthy multimodal systems: models that remain controllable, interpretable, and robust even when inputs or instructions are incomplete, manipulated, or imperfect."
-        }
-      ]
+      title: "Trustworthy and controllable multimodal systems",
+      text:
+        "Beyond low-level vision, I am interested in structured multimodal systems where image transformation follows explicit intent, planning, and robust control rather than opaque generation alone."
     }
   ],
   publications: [
@@ -133,58 +52,54 @@ window.siteData = {
       title: "TOVO: Tone-Oriented Vision Optimization for Efficient Low-Light Image Enhancement",
       authors: "Razafindratovolahy, A., Rao, Y., et al.",
       venue: "Signal Processing, 2026",
-      year: "2026",
-      doi: "10.1016/j.sigpro.2026.110540",
-      pdf: "papers/TOVO-paper.pdf",
-      cardText:
+      summary:
         "A tone-oriented formulation for efficient low-light image enhancement that links perceptual quality with computational practicality.",
+      pdf: "papers/TOVO-paper.pdf",
       bibtex:
         "@article{razafindratovolahy2026tovo,\n  title={TOVO: Tone-Oriented Vision Optimization for Efficient Low-Light Image Enhancement},\n  author={Razafindratovolahy, Annicet and Rao, Yunbo and others},\n  journal={Signal Processing},\n  year={2026},\n  doi={10.1016/j.sigpro.2026.110540}\n}",
       sections: [
         {
-          heading: "Problem",
+          heading: "Overview",
           body:
-            "Low-light enhancement often improves brightness at the expense of tonal stability, structural fidelity, or computational efficiency. This paper addresses that tension by rethinking enhancement through a tone-oriented optimization view."
+            "TOVO studies low-light enhancement through a tone-oriented optimization perspective. The work aims to improve visual quality while remaining computationally practical, reflecting a broader interest in efficient and dependable restoration methods."
         },
         {
           heading: "Contribution",
           body:
-            "TOVO introduces a formulation that emphasizes tone-aware optimization for efficient enhancement. The work is designed to improve visual quality while remaining practical for lightweight and deployment-minded settings."
+            "The paper develops an enhancement formulation that emphasizes tonal behavior rather than only raw brightness gain, helping the method remain more controlled and visually coherent."
         },
         {
-          heading: "Why it matters",
+          heading: "Context",
           body:
-            "The paper reflects a recurring goal in my research: building enhancement methods that are not only accurate, but also computationally grounded and stable enough for real-world use."
+            "This work fits into my larger research direction on robust enhancement methods that balance image quality, stability, and efficiency."
         }
       ]
     },
     {
-      slug: "simple-nonlinear-function",
+      slug: "nonlinear-function",
       title: "A Simple Yet Robust Nonlinear Function for Low-Light Image Enhancement",
       authors: "Razafindratovolahy, A., Rao, Y.",
       venue: "IEEE Signal Processing Letters, 2025",
-      year: "2025",
-      doi: "10.1109/LSP.2025.3602001",
-      pdf: "papers/A_Simple_Yet_Robust_Nonlinear_Function_for_Low-Light_Image_Enhancement_Task.pdf",
-      cardText:
+      summary:
         "A compact analytical formulation showing how a carefully designed nonlinear function can provide strong and stable enhancement behavior.",
+      pdf: "papers/A_Simple_Yet_Robust_Nonlinear_Function_for_Low-Light_Image_Enhancement_Task.pdf",
       bibtex:
         "@article{razafindratovolahy2025nonlinear,\n  title={A Simple Yet Robust Nonlinear Function for Low-Light Image Enhancement},\n  author={Razafindratovolahy, Annicet and Rao, Yunbo},\n  journal={IEEE Signal Processing Letters},\n  year={2025},\n  doi={10.1109/LSP.2025.3602001}\n}",
       sections: [
         {
-          heading: "Problem",
+          heading: "Overview",
           body:
-            "Many enhancement pipelines become unnecessarily complex while still struggling to remain stable across diverse low-light cases. This work asks whether a more compact analytical design can still achieve robust behavior."
+            "This paper asks whether a carefully structured analytical function can deliver robust enhancement without unnecessary complexity. It reflects my interest in combining mathematical formulation with practical visual modeling."
         },
         {
           heading: "Contribution",
           body:
-            "The paper develops a simple nonlinear function tailored for low-light enhancement. Its value lies in showing that strong enhancement behavior can emerge from a carefully structured formulation rather than only from larger black-box designs."
+            "The work introduces a simple nonlinear function tailored to low-light enhancement and shows that compact formulations can still achieve dependable performance."
         },
         {
-          heading: "Why it matters",
+          heading: "Context",
           body:
-            "This work captures an important aspect of my research style: using analytical structure to improve robustness, interpretability, and efficiency."
+            "The paper represents a core part of my research style: using explicit structure to improve robustness, efficiency, and interpretability."
         }
       ]
     },
@@ -193,28 +108,26 @@ window.siteData = {
       title: "SMILE: Enhancing Low-Light Images in Lightweight Networks via Exposure-Aware Non-Reference Losses",
       authors: "Razafindratovolahy, A., Rao, Y., et al.",
       venue: "Multimedia Systems, 2026",
-      year: "2026",
-      doi: "10.1007/s00530-026-02295-w",
-      pdf: "papers/s00530-026-02295-w.pdf",
-      cardText:
+      summary:
         "A lightweight low-light enhancement framework driven by exposure-aware non-reference losses for robust learning without heavy supervision.",
+      pdf: "papers/s00530-026-02295-w.pdf",
       bibtex:
         "@article{razafindratovolahy2026smile,\n  title={SMILE: Enhancing Low-Light Images in Lightweight Networks via Exposure-Aware Non-Reference Losses},\n  author={Razafindratovolahy, Annicet and Rao, Yunbo and others},\n  journal={Multimedia Systems},\n  year={2026},\n  doi={10.1007/s00530-026-02295-w}\n}",
       sections: [
         {
-          heading: "Problem",
+          heading: "Overview",
           body:
-            "Lightweight enhancement models are desirable in practice, but reducing model size often weakens training signals and harms restoration quality. This paper addresses that balance directly."
+            "SMILE explores low-light enhancement with lightweight models and non-reference supervision, aiming to remain practical without sacrificing robustness."
         },
         {
           heading: "Contribution",
           body:
-            "SMILE proposes exposure-aware non-reference losses for lightweight low-light enhancement. The method strengthens learning without relying on heavy supervision, making the model more suitable for efficient deployment."
+            "The paper introduces exposure-aware non-reference losses that strengthen learning signals in efficient enhancement networks."
         },
         {
-          heading: "Why it matters",
+          heading: "Context",
           body:
-            "The paper connects efficiency, robustness, and practical learning objectives, which are central themes across my work."
+            "This work sits at the intersection of efficiency, robust optimization, and deployment-aware computer vision."
         }
       ]
     },
@@ -223,80 +136,83 @@ window.siteData = {
       title: "Prompt2Edit: Symbolic Planning for Vision-Language Image Editing",
       authors: "Razafindratovolahy, A., Rao, Y., et al.",
       venue: "IEEE PRAI Conference, 2026",
-      year: "2026",
-      doi: "",
-      pdf: "papers/prompt2edit-paper.pdf",
-      cardText:
+      summary:
         "A multimodal editing framework that uses symbolic planning to make image edits more structured, interpretable, and controllable.",
+      pdf: "papers/prompt2edit-paper.pdf",
       bibtex:
         "@inproceedings{razafindratovolahy2026prompt2edit,\n  title={Prompt2Edit: Symbolic Planning for Vision-Language Image Editing},\n  author={Razafindratovolahy, Annicet and Rao, Yunbo and others},\n  booktitle={IEEE PRAI Conference},\n  year={2026}\n}",
       sections: [
         {
-          heading: "Problem",
+          heading: "Overview",
           body:
-            "Vision-language image editing is often flexible but under-structured, making it difficult to control how a requested transformation is carried out. This paper addresses editing through planning rather than treating it as a single opaque generation step."
+            "Prompt2Edit extends my research beyond restoration into multimodal editing, with a focus on making transformations interpretable and structured."
         },
         {
           heading: "Contribution",
           body:
-            "Prompt2Edit introduces symbolic planning into vision-language image editing. The central idea is to turn complex editing requests into a more organized, interpretable sequence of actions."
+            "The work introduces symbolic planning into vision-language image editing so that complex edits can be organized as explicit steps rather than a single opaque generation process."
         },
         {
-          heading: "Why it matters",
+          heading: "Context",
           body:
-            "This paper extends my research toward multimodal systems while preserving the same emphasis on reliability, structure, and controllability."
+            "This direction connects robust vision with trustworthy multimodal systems and controllable image transformation."
         }
       ]
     },
     {
       slug: "daw-fa",
       title: "DAW-FA: Domain-Aware Adaptive Weighting with Fine-Grain Attention for Unsupervised MRI Harmonization",
-      authors: "Delali Fiasam, L., Rao, Y., Sey, C., Aggrey, S. E. B., Kodjiku, S. L., Agyekum, K. O. B. O., Razafindratovolahy, A., Adjei-Mensah, I., Ukwuoma, C. C., Sam, F.",
+      authors:
+        "Delali Fiasam, L., Rao, Y., Sey, C., Aggrey, S. E. B., Kodjiku, S. L., Agyekum, K. O. B. O., Razafindratovolahy, A., Adjei-Mensah, I., Ukwuoma, C. C., Sam, F.",
       venue: "Journal of King Saud University: Computer and Information Sciences, 2025",
-      year: "2025",
-      doi: "",
-      pdf: "",
-      cardText:
+      summary:
         "A contribution to unsupervised MRI harmonization through domain-aware weighting and fine-grain attention under cross-domain variability.",
+      pdf: "",
       bibtex:
         "@article{fiasam2025dawfa,\n  title={DAW-FA: Domain-Aware Adaptive Weighting with Fine-Grain Attention for Unsupervised MRI Harmonization},\n  author={Fiasam, L. Delali and Rao, Yunbo and Sey, C. and Aggrey, S. E. B. and Kodjiku, S. L. and Agyekum, K. O. B. O. and Razafindratovolahy, Annicet and Adjei-Mensah, I. and Ukwuoma, C. C. and Sam, F.},\n  journal={Journal of King Saud University: Computer and Information Sciences},\n  year={2025}\n}",
       sections: [
         {
-          heading: "Problem",
+          heading: "Overview",
           body:
-            "Cross-domain variation is a central challenge in medical imaging. MRI harmonization requires methods that can adapt across acquisition differences without paired supervision."
+            "DAW-FA addresses unsupervised MRI harmonization under domain variability, extending my research interests toward robustness in medical imaging."
         },
         {
           heading: "Contribution",
           body:
-            "DAW-FA studies unsupervised MRI harmonization through domain-aware adaptive weighting and fine-grain attention, helping build stronger feature alignment under domain variability."
+            "The paper studies domain-aware adaptive weighting and fine-grain attention for stronger harmonization across heterogeneous imaging distributions."
         },
         {
-          heading: "Why it matters",
+          heading: "Context",
           body:
-            "This work connects my low-level vision background with broader questions about robustness and adaptation under shifting data distributions."
+            "It reflects a broader interest in adaptation under shift, beyond standard image enhancement scenarios."
         }
       ]
     }
   ],
-  background: {
+  experience: {
     education: [
       "PhD in Software Engineering, University of Electronic Science and Technology of China, 2021-2026",
       "MSc in Computer Science and Industrial Electronics, Universite d'Antsiranana, 2016-2019",
       "BSc in Computer Science and Industrial Electronics, Universite d'Antsiranana, 2013-2016"
     ],
-    experience: [
-      "PhD Researcher in applied computer vision at UESTC, developing robust methods for enhancement, restoration, and adaptive learning.",
-      "Software Engineer at Ambatovy, Ingenosya, and Lemurriia, with experience in data systems, backend engineering, deployment, and production reliability."
+    research: [
+      "PhD researcher in applied computer vision at UESTC, developing region-adaptive methods that enhance degraded content while preserving reliable information.",
+      "Designed training objectives and loss functions for spatially targeted learning, lightweight models, and robust behavior across diverse imaging conditions.",
+      "Explored control-based modeling strategies for adaptable solutions spanning enhancement, noise handling, medical imaging, remote sensing, and robotics."
     ],
-    recognition: [
+    professional: [
+      "Software Engineer at Ambatovy, building real-world data acquisition and tracking systems integrated with enterprise infrastructure.",
+      "Software Engineer at Ingenosya, working on secure banking platforms, deployment, and mission-critical production systems.",
+      "Software Engineer at Lemurriia, developing high-concurrency services, data pipelines, and secure production systems."
+    ],
+    leadership: [
       "President of Malagasy Students in China, coordinating a multi-university student community.",
+      "Helped secure the release of a significant portion of government student funding allocations for Malagasy students in China.",
       "Honorable Mention in the national competition 'Chinese Digital Development in My Eyes'.",
       "First Place in the UESTC basketball competition."
     ]
   },
   contact:
     "For research conversations, collaborations, invited talks, or academic networking, feel free to get in touch by email.",
-  footer:
-    "Annicet Razafindratovolahy"
+  footer: "Annicet Razafindratovolahy"
 };

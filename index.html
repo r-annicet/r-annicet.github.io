@@ -6,12 +6,12 @@
     <title>Research Portfolio</title>
     <meta
       name="description"
-      content="Research website for Annicet Razafindratovolahy, focusing on robust visual modeling, image enhancement, and trustworthy AI."
+      content="Research website for Annicet Razafindratovolahy."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -21,95 +21,88 @@
       <header class="site-header">
         <a class="brand" href="#top" aria-label="Homepage">
           <span class="brand-mark">A</span>
-          <span id="brand-name">Annicet Razafindratovolahy</span>
+          <span id="brand-name"></span>
         </a>
         <nav class="site-nav" id="site-nav"></nav>
       </header>
 
       <main id="top">
-        <section class="hero reveal">
-          <div class="hero-copy">
+        <section class="hero">
+          <div class="hero-main">
             <p class="eyebrow" id="hero-role"></p>
             <h1 id="hero-name"></h1>
-            <p class="hero-tagline" id="hero-tagline"></p>
             <p class="hero-summary" id="hero-summary"></p>
             <div class="hero-actions" id="hero-actions"></div>
-            <ul class="hero-meta" id="hero-meta"></ul>
           </div>
-          <aside class="hero-panel">
-            <div class="profile-card">
-              <p class="profile-kicker">Research Profile</p>
-              <h2>Reliable vision under imperfect conditions</h2>
-              <p>
-                I study enhancement, restoration, adaptive learning, and multimodal control with an emphasis on robustness, interpretability, and real-world deployment constraints.
-              </p>
+          <aside class="hero-side">
+            <div class="hero-note">
+              <p class="eyebrow">Affiliation</p>
+              <p id="hero-affiliation"></p>
             </div>
-            <div class="metrics-grid" id="metrics-grid"></div>
+            <div class="stats-grid" id="stats-grid"></div>
           </aside>
         </section>
 
-        <section class="section reveal" id="about">
+        <section class="section about-section" id="about">
           <div class="section-heading">
             <p class="eyebrow">About</p>
-            <h2>Research identity</h2>
+            <h2>Research profile</h2>
           </div>
-          <div class="about-grid">
-            <div class="prose-card" id="about-block"></div>
-            <div class="chip-panel">
-              <h3>Keywords</h3>
-              <div class="chip-list" id="keywords"></div>
+          <div class="about-layout">
+            <div class="about-copy" id="about-copy"></div>
+            <div class="keyword-box">
+              <p class="eyebrow">Focus</p>
+              <div class="keyword-list" id="keyword-list"></div>
             </div>
           </div>
         </section>
 
-        <section class="section reveal" id="research">
+        <section class="section" id="research">
           <div class="section-heading">
             <p class="eyebrow">Research</p>
-            <h2>Research themes</h2>
+            <h2>Current themes</h2>
           </div>
-          <div class="card-grid" id="research-grid"></div>
+          <div class="theme-grid" id="theme-grid"></div>
         </section>
 
-        <section class="section reveal" id="publications">
+        <section class="section" id="publications">
           <div class="section-heading">
             <p class="eyebrow">Publications</p>
-            <h2>Selected papers</h2>
+            <h2>Publications and manuscripts</h2>
           </div>
-          <div class="card-grid" id="publications-list"></div>
+          <div class="publication-grid" id="publication-grid"></div>
         </section>
 
-        <section class="section reveal" id="background">
+        <section class="section" id="experience">
           <div class="section-heading">
             <p class="eyebrow">Experience</p>
-            <h2>Academic path and professional experience</h2>
+            <h2>Academic and professional background</h2>
           </div>
-          <div class="triple-grid">
-            <article class="stack-card">
-              <div class="stack-card-header">
-                <h3>Education</h3>
-              </div>
-              <div class="stack-list compact" id="education-list"></div>
+          <div class="experience-grid">
+            <article class="info-card">
+              <h3>Education</h3>
+              <div class="info-list" id="education-list"></div>
             </article>
-            <article class="stack-card">
-              <div class="stack-card-header">
-                <h3>Experience</h3>
-              </div>
-              <div class="stack-list compact" id="experience-list"></div>
+            <article class="info-card">
+              <h3>Research</h3>
+              <div class="info-list" id="research-list"></div>
             </article>
-            <article class="stack-card">
-              <div class="stack-card-header">
-                <h3>Leadership & Honors</h3>
-              </div>
-              <div class="stack-list compact" id="recognition-list"></div>
+            <article class="info-card">
+              <h3>Professional</h3>
+              <div class="info-list" id="professional-list"></div>
+            </article>
+            <article class="info-card">
+              <h3>Leadership & Honors</h3>
+              <div class="info-list" id="leadership-list"></div>
             </article>
           </div>
         </section>
 
-        <section class="section reveal" id="contact">
-          <div class="contact-banner">
+        <section class="section contact-section" id="contact">
+          <div class="contact-panel">
             <div>
               <p class="eyebrow">Contact</p>
-              <h2>Research conversations are always welcome</h2>
+              <h2>Get in touch</h2>
               <p id="contact-text"></p>
             </div>
             <div class="hero-actions" id="contact-actions"></div>
@@ -126,7 +119,7 @@
       <div class="citation-inner">
         <div class="citation-topbar">
           <button class="button" id="citation-copy" type="button">Copy BibTeX</button>
-          <button class="button modal-close" id="citation-close" type="button">Close</button>
+          <button class="button" id="citation-close" type="button">Close</button>
         </div>
         <p class="eyebrow">BibTeX</p>
         <h2 id="citation-title"></h2>
@@ -134,7 +127,6 @@
       </div>
     </dialog>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.min.js"></script>
     <script src="site-data.js"></script>
     <script src="script.js"></script>
   </body>

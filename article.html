@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Article</title>
+    <title>Publication</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -22,21 +22,15 @@
       </header>
 
       <main class="article-page">
-        <section class="article-hero">
-          <div class="article-hero-copy">
-            <p class="eyebrow" id="article-type"></p>
-            <h1 id="article-title"></h1>
-            <p class="article-meta" id="article-meta"></p>
-            <p class="hero-summary" id="article-intro"></p>
-            <div class="hero-actions" id="article-actions"></div>
-          </div>
-          <div class="article-preview">
-            <canvas id="article-thumb" aria-label="Paper preview"></canvas>
-          </div>
+        <section class="article-page-hero">
+          <p class="eyebrow">Publication</p>
+          <h1 id="article-title"></h1>
+          <p class="article-meta" id="article-meta"></p>
+          <div class="hero-actions" id="article-actions"></div>
         </section>
 
-        <section class="section">
-          <div class="article-sections" id="article-sections"></div>
+        <section class="section article-content">
+          <div id="article-sections" class="article-sections"></div>
         </section>
       </main>
     </div>
@@ -45,7 +39,7 @@
       <div class="citation-inner">
         <div class="citation-topbar">
           <button class="button" id="citation-copy" type="button">Copy BibTeX</button>
-          <button class="button modal-close" id="citation-close" type="button">Close</button>
+          <button class="button" id="citation-close" type="button">Close</button>
         </div>
         <p class="eyebrow">BibTeX</p>
         <h2 id="citation-title"></h2>
@@ -53,7 +47,6 @@
       </div>
     </dialog>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.min.js"></script>
     <script src="site-data.js"></script>
     <script src="article.js"></script>
   </body>
