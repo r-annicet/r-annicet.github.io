@@ -22,10 +22,19 @@ function createLink(link, className = "button") {
 function fillHero() {
   document.title = `${data.name} | Research`;
   byId("brand-name").textContent = data.name;
-  byId("hero-name").textContent = data.name;
+  const nameParts = data.name.split(" ");
+  const firstName = nameParts.shift() || data.name;
+  const lastName = nameParts.join(" ");
+  byId("hero-name").innerHTML = lastName
+    ? `<span class="hero-name-line">${firstName}</span><span class="hero-name-line hero-name-surname">${lastName}</span>`
+    : `<span class="hero-name-line">${firstName}</span>`;
   byId("hero-role").textContent = data.role;
   byId("hero-summary").textContent = data.heroSummary;
-  byId("hero-affiliation").textContent = `${data.institution} · ${data.location}`;
+  const institutionLink = byId("institution-link");
+  institutionLink.textContent = data.institution;
+  institutionLink.href = data.institutionUrl;
+  byId("hero-location").textContent = data.location;
+
   byId("contact-text").textContent = data.contact;
   byId("footer-text").textContent = data.footer;
   document.querySelector(".brand-mark").textContent = data.name.charAt(0).toUpperCase();
@@ -64,9 +73,17 @@ function renderStats() {
 
 function renderAbout() {
   const target = byId("about-copy");
-  data.intro.forEach((paragraph) => {
+  data.intro.forEach((paragraph, index) => {
     const p = document.createElement("p");
-    p.textContent = paragraph;
+    if (index === 0) {
+      const institutionAnchor = `<a href="${data.institutionUrl}" target="_blank" rel="noreferrer">${data.institution}</a>`;
+      const supervisorAnchor = `<a href="${data.supervisor.href}" target="_blank" rel="noreferrer">${data.supervisor.name}</a>`;
+      p.innerHTML = paragraph
+        .replace(data.institution, institutionAnchor)
+        .replace(data.supervisor.name, supervisorAnchor);
+    } else {
+      p.textContent = paragraph;
+    }
     target.appendChild(p);
   });
 }
@@ -108,7 +125,7 @@ function renderPublications() {
         <p>${item.summary}</p>
       </div>
       <div class="publication-actions">
-        <a class="button primary" href="${articleHref}">Read More</a>
+        <a class="button primary disabled" href="#" aria-disabled="true">Read More</a>
         ${item.pdf ? `<a class="button" href="${pdfHref}">View PDF</a>` : ""}
         <button class="button cite-button" type="button">Cite</button>
       </div>

@@ -21,6 +21,9 @@
           <span id="brand-name"></span>
         </a>
         <nav class="site-nav" id="site-nav"></nav>
+        <button class="button theme-toggle" type="button" aria-label="Toggle color theme">
+          <span class="theme-toggle-icon" aria-hidden="true"></span>
+        </button>
       </header>
 
       <main id="top">
@@ -34,7 +37,12 @@
           <aside class="hero-side">
             <div class="hero-note">
               <p class="eyebrow">Affiliation</p>
-              <p id="hero-affiliation"></p>
+              <p class="affiliation-line" id="hero-affiliation">
+                <a id="institution-link" href="https://en.uestc.edu.cn/" target="_blank" rel="noreferrer">
+                  University of Electronic Science and Technology of China
+                </a>
+                <span id="hero-location">Chengdu, China</span>
+              </p>
             </div>
             <div class="stats-grid" id="stats-grid"></div>
           </aside>
@@ -68,7 +76,7 @@
         <section class="section" id="experience">
           <div class="section-heading">
             <p class="eyebrow">Experience</p>
-            <h2>Academic and professional background</h2>
+            <h2>Academic & professional background</h2>
           </div>
           <div class="experience-grid">
             <article class="info-card">
@@ -120,6 +128,7 @@
     </dialog>
 
     <script src="site-data.js"></script>
+    <script src="theme.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

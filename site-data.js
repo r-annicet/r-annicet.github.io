@@ -2,12 +2,17 @@ window.siteData = {
   name: "Annicet Razafindratovolahy",
   role: "PhD Candidate in Software Engineering",
   institution: "University of Electronic Science and Technology of China",
+  institutionUrl: "https://en.uestc.edu.cn/",
   location: "Chengdu, China",
   email: "annicet.razafindratovolahy@std.uestc.edu.cn",
+  supervisor: {
+    name: "Professor Rao Yunbo",
+    href: "http://www.raoyunbo.cn/"
+  },
   heroSummary:
-    "My research lies in computer vision and robust visual modeling, with interests spanning image enhancement, image restoration, multimodal systems, and image and video analysis under challenging real-world conditions.",
+    "I work on robust visual modeling for computer vision, with a particular focus on enhancement, restoration, and multimodal visual understanding under challenging real-world conditions.",
   intro: [
-    "I am a PhD candidate at the University of Electronic Science and Technology of China, where I work on robust visual modeling under degradation, noise, and distribution shift. My research is motivated by a simple question: how can visual systems remain reliable when real data is imperfect, unstable, or manipulated?",
+    "I am a PhD candidate at the University of Electronic Science and Technology of China, working under the supervision of Professor Rao Yunbo on robust visual modeling under degradation, noise, and distribution shift. My research is motivated by a simple question: how can visual systems remain reliable when real data is imperfect, unstable, or manipulated?",
     "Most of my recent work has focused on image enhancement and restoration, especially low-light vision, exposure-aware learning, lightweight modeling, and controllable formulations that improve degraded content while preserving reliable information. I combine analytical ideas with learning-based methods to improve stability, interpretability, and generalization.",
     "Beyond enhancement, I am broadly interested in computer vision, multimodal systems, image and video analysis, and trustworthy AI. I am especially drawn to problems where robustness, controllability, and real-world deployment constraints matter as much as raw benchmark performance."
   ],

@@ -20,10 +20,9 @@ function openCitation(item) {
 
 function renderList() {
   const target = byId("publication-list");
-  data.publications.forEach((item, index) => {
+  data.publications.forEach((item) => {
     const article = document.createElement("article");
     article.className = "publication-list-item";
-    const articleHref = `article.html?slug=${encodeURIComponent(item.slug)}`;
     const pdfLink = item.pdf
       ? `<a class="text-link" href="viewer.html?file=${encodeURIComponent(item.pdf)}&title=${encodeURIComponent(item.title)}">PDF</a>`
       : "";
@@ -33,7 +32,7 @@ function renderList() {
         <p class="publication-authors">${item.authors}</p>
         <p class="publication-list-meta">${item.venue}</p>
         <div class="publication-list-links">
-          <a class="text-link" href="${articleHref}">Read more</a>
+          <span class="text-link disabled-text-link" aria-disabled="true">Read more</span>
           ${pdfLink}
           <button class="text-link as-button" type="button">Cite</button>
         </div>
