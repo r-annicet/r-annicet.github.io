@@ -30,7 +30,7 @@ window.siteData = {
   stats: [
     { value: "6+", label: "Papers and manuscripts" },
     { value: "4.0/4.0", label: "PhD GPA" },
-    { value: "June 2026", label: "Expected defense" },
+    { value: "June 2026", label: "Expected graduation" },
     { value: "UESTC", label: "PhD institution" }
   ],
   focusAreas: [
