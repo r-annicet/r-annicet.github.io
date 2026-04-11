@@ -30,6 +30,8 @@ function fillHero() {
     : `<span class="hero-name-line">${firstName}</span>`;
   byId("hero-role").textContent = data.role;
   byId("hero-summary").textContent = data.heroSummary;
+  byId("hero-photo").src = data.photo;
+  byId("hero-photo").alt = `${data.name} portrait`;
   const institutionLink = byId("institution-link");
   institutionLink.textContent = data.institution;
   institutionLink.href = data.institutionUrl;

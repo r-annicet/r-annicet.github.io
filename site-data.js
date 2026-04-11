@@ -4,6 +4,7 @@ window.siteData = {
   institution: "University of Electronic Science and Technology of China",
   institutionUrl: "https://en.uestc.edu.cn/",
   location: "Chengdu, China",
+  photo: "assets/figures/profile-photo.png",
   email: "annicet.razafindratovolahy@std.uestc.edu.cn",
   supervisor: {
     name: "Professor Rao Yunbo",
@@ -30,8 +31,7 @@ window.siteData = {
   stats: [
     { value: "6+", label: "Papers and manuscripts" },
     { value: "4.0/4.0", label: "PhD GPA" },
-    { value: "June 2026", label: "Expected graduation" },
-    { value: "UESTC", label: "PhD institution" }
+    { value: "June 2026", label: "Expected graduation" }
   ],
   focusAreas: [
     "Computer vision",

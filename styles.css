@@ -190,6 +190,62 @@ pre {
   color: var(--muted);
 }
 
+.hero-top {
+  display: grid;
+  gap: 18px;
+}
+
+.hero-main {
+  display: grid;
+  gap: 18px;
+}
+
+.hero-copy {
+  text-align: left;
+}
+
+.hero-main .eyebrow,
+.hero-main h1,
+.hero-main .hero-summary {
+  width: 100%;
+}
+
+.hero-cards {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.hero-cards .hero-note {
+  height: 100%;
+}
+
+.hero-portrait {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--paper-strong);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+  justify-self: start;
+}
+
+.hero-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero-portrait-left {
+  width: 168px;
+  height: 204px;
+  border-radius: 22px;
+}
+
 .affiliation-line,
 .supervisor-line {
   margin: 12px 0 0;
@@ -228,6 +284,14 @@ pre {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.hero-actions-rail {
+  align-items: stretch;
+}
+
+.hero-actions-rail .button {
+  width: 100%;
 }
 
 .button {
@@ -327,7 +391,8 @@ pre {
 .stat-card:hover,
 .info-card:hover,
 .article-abstract-card:hover,
-.paper-visual-card:hover {
+.paper-visual-card:hover,
+.hero-portrait:hover {
   transform: translateY(-3px);
   box-shadow: 0 14px 28px rgba(33, 29, 25, 0.1);
 }
@@ -585,7 +650,8 @@ pre {
 :root[data-theme="dark"] .stat-card:hover,
 :root[data-theme="dark"] .info-card:hover,
 :root[data-theme="dark"] .article-abstract-card:hover,
-:root[data-theme="dark"] .paper-visual-card:hover {
+:root[data-theme="dark"] .paper-visual-card:hover,
+:root[data-theme="dark"] .hero-portrait:hover {
   box-shadow: 0 18px 30px rgba(0, 0, 0, 0.22);
 }
 
@@ -842,14 +908,42 @@ pre {
   .experience-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .hero-top {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .hero-main {
+    grid-template-columns: minmax(0, 1fr) 180px;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .hero-actions-rail {
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    align-self: center;
+  }
+
+  .hero-cards {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: stretch;
+  }
+
+  .hero-cards .hero-note {
+    grid-column: 1;
+  }
+
+  .hero-cards .stats-grid {
+    grid-column: 2 / span 3;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 980px) {
-  .hero {
-    grid-template-columns: 1.25fr 0.75fr;
-    align-items: start;
-  }
-
   .about-layout {
     grid-template-columns: 1.2fr 0.8fr;
   }
