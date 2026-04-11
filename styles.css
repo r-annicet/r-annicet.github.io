@@ -304,6 +304,20 @@ pre {
   padding: 22px;
 }
 
+.publication-image {
+  margin: -22px -22px 18px;
+}
+
+.publication-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-strong);
+}
+
 .publication-top {
   margin-bottom: 12px;
 }
@@ -406,6 +420,28 @@ pre {
 .article-section-card h2 {
   font-size: 1.8rem;
   margin-bottom: 10px;
+}
+
+.article-figure-section {
+  padding: 18px;
+}
+
+.article-figure-block {
+  margin: 0;
+}
+
+.article-figure-block img {
+  display: block;
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: var(--paper-strong);
+}
+
+.article-figure-block figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
 .pdf-frame {

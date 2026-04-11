@@ -98,6 +98,7 @@ function renderPublications() {
       ? `viewer.html?file=${encodeURIComponent(item.pdf)}&title=${encodeURIComponent(item.title)}`
       : "";
     card.innerHTML = `
+      ${item.figure ? `<div class="publication-image"><img src="${item.figure}" alt="${item.title}"></div>` : ""}
       <div class="publication-top">
         <span class="publication-venue">${item.venue}</span>
       </div>

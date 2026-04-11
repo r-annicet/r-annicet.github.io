@@ -24,6 +24,12 @@ function render() {
   byId("article-title").textContent = item.title;
   byId("article-meta").textContent = `${item.authors} · ${item.venue}`;
 
+  if (item.figure) {
+    byId("article-figure").src = item.figure;
+    byId("article-figure").alt = item.title;
+    byId("article-figure-caption").textContent = item.figureCaption || "";
+  }
+
   const actions = byId("article-actions");
   if (item.pdf) {
     actions.appendChild(
@@ -34,6 +40,7 @@ function render() {
       })
     );
   }
+
   const citeButton = document.createElement("button");
   citeButton.className = "button";
   citeButton.type = "button";

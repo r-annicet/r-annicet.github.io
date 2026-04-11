@@ -13,7 +13,6 @@ window.siteData = {
   ],
   navigation: [
     { label: "About", href: "#about" },
-    { label: "Research", href: "#research" },
     { label: "Publications", href: "#publications" },
     { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" }
@@ -46,6 +45,9 @@ window.siteData = {
       title: "TOVO: Tone-Oriented Vision Optimization for Efficient Low-Light Image Enhancement",
       authors: "Razafindratovolahy, A., Rao, Y., et al.",
       venue: "Signal Processing, 2026",
+      figure: "assets/figures/tovo-figure.png",
+      figureCaption:
+        "Conceptual illustration of the TOVO paper: a progression from dark input to tone-guided enhancement with an emphasis on controlled visual correction.",
       summary:
         "A tone-oriented formulation for efficient low-light image enhancement that links perceptual quality with computational practicality.",
       pdf: "papers/TOVO-paper.pdf",
@@ -55,17 +57,17 @@ window.siteData = {
         {
           heading: "Overview",
           body:
-            "TOVO studies low-light enhancement through a tone-oriented optimization perspective. The work aims to improve visual quality while remaining computationally practical, reflecting a broader interest in efficient and dependable restoration methods."
+            "TOVO explores low-light image enhancement through the lens of tone-oriented optimization. Instead of treating enhancement as a simple increase in brightness, the paper pays attention to how tonal structure should evolve across the image so that the result remains visually balanced and computationally efficient."
         },
         {
-          heading: "Contribution",
+          heading: "Key idea",
           body:
-            "The paper develops an enhancement formulation that emphasizes tonal behavior rather than only raw brightness gain, helping the method remain more controlled and visually coherent."
+            "The central contribution is a formulation that emphasizes tone behavior rather than raw intensity amplification alone. This makes the enhancement process more controlled, helping the model improve dark scenes without drifting too far from visually coherent outputs."
         },
         {
-          heading: "Context",
+          heading: "Why it matters",
           body:
-            "This work fits into my larger research direction on robust enhancement methods that balance image quality, stability, and efficiency."
+            "This paper reflects a broader direction in my work: designing enhancement methods that are not only effective on benchmark images, but also stable, efficient, and suitable for realistic deployment settings where computational cost matters."
         }
       ]
     },
@@ -74,6 +76,9 @@ window.siteData = {
       title: "A Simple Yet Robust Nonlinear Function for Low-Light Image Enhancement",
       authors: "Razafindratovolahy, A., Rao, Y.",
       venue: "IEEE Signal Processing Letters, 2025",
+      figure: "assets/figures/nonlinear-figure.png",
+      figureCaption:
+        "An abstract view of the paper's central idea: a compact monotonic nonlinear mapping that balances simplicity with stable enhancement behavior.",
       summary:
         "A compact analytical formulation showing how a carefully designed nonlinear function can provide strong and stable enhancement behavior.",
       pdf: "papers/A_Simple_Yet_Robust_Nonlinear_Function_for_Low-Light_Image_Enhancement_Task.pdf",
@@ -83,17 +88,17 @@ window.siteData = {
         {
           heading: "Overview",
           body:
-            "This paper asks whether a carefully structured analytical function can deliver robust enhancement without unnecessary complexity. It reflects my interest in combining mathematical formulation with practical visual modeling."
+            "This paper asks a focused question: how much can a well-designed nonlinear function do on its own for low-light enhancement? Rather than increasing architectural complexity, the work investigates whether a compact analytical formulation can already provide reliable visual improvement."
         },
         {
-          heading: "Contribution",
+          heading: "Key idea",
           body:
-            "The work introduces a simple nonlinear function tailored to low-light enhancement and shows that compact formulations can still achieve dependable performance."
+            "The contribution is a simple yet robust nonlinear mapping tailored to low-light enhancement. The paper shows that carefully structured mathematical design can still produce dependable enhancement behavior without requiring unnecessarily heavy models."
         },
         {
-          heading: "Context",
+          heading: "Why it matters",
           body:
-            "The paper represents a core part of my research style: using explicit structure to improve robustness, efficiency, and interpretability."
+            "The work represents an important aspect of my research style: using explicit analytical structure to improve robustness, interpretability, and efficiency in vision models."
         }
       ]
     },
@@ -102,6 +107,9 @@ window.siteData = {
       title: "SMILE: Enhancing Low-Light Images in Lightweight Networks via Exposure-Aware Non-Reference Losses",
       authors: "Razafindratovolahy, A., Rao, Y., et al.",
       venue: "Multimedia Systems, 2026",
+      figure: "assets/figures/smile-figure.png",
+      figureCaption:
+        "Illustration of the SMILE framework: lightweight enhancement supported by exposure-aware non-reference losses rather than heavy supervision.",
       summary:
         "A lightweight low-light enhancement framework driven by exposure-aware non-reference losses for robust learning without heavy supervision.",
       pdf: "papers/s00530-026-02295-w.pdf",
@@ -111,17 +119,17 @@ window.siteData = {
         {
           heading: "Overview",
           body:
-            "SMILE explores low-light enhancement with lightweight models and non-reference supervision, aiming to remain practical without sacrificing robustness."
+            "SMILE addresses a practical challenge in low-light vision: how to build lightweight enhancement models that remain effective without relying on expensive supervision. The paper is motivated by the need for methods that are both deployable and visually reliable."
         },
         {
-          heading: "Contribution",
+          heading: "Key idea",
           body:
-            "The paper introduces exposure-aware non-reference losses that strengthen learning signals in efficient enhancement networks."
+            "The main contribution is a set of exposure-aware non-reference losses that provide stronger learning signals for efficient enhancement networks. This makes it possible to train lightweight systems that still respond well to difficult illumination conditions."
         },
         {
-          heading: "Context",
+          heading: "Why it matters",
           body:
-            "This work sits at the intersection of efficiency, robust optimization, and deployment-aware computer vision."
+            "The paper sits at the intersection of efficient model design, practical optimization, and robust computer vision, which is a recurring theme across my research."
         }
       ]
     },
@@ -130,6 +138,9 @@ window.siteData = {
       title: "Prompt2Edit: Symbolic Planning for Vision-Language Image Editing",
       authors: "Razafindratovolahy, A., Rao, Y., et al.",
       venue: "IEEE PRAI Conference, 2026",
+      figure: "assets/figures/prompt2edit-figure.png",
+      figureCaption:
+        "Conceptual illustration of Prompt2Edit: transforming an instruction into an explicit edit plan before carrying out the image transformation.",
       summary:
         "A multimodal editing framework that uses symbolic planning to make image edits more structured, interpretable, and controllable.",
       pdf: "papers/prompt2edit-paper.pdf",
@@ -139,17 +150,17 @@ window.siteData = {
         {
           heading: "Overview",
           body:
-            "Prompt2Edit extends my research beyond restoration into multimodal editing, with a focus on making transformations interpretable and structured."
+            "Prompt2Edit extends my work beyond restoration and enhancement into multimodal image editing. The paper is motivated by the idea that vision-language editing becomes more trustworthy when transformations are organized rather than left entirely implicit."
         },
         {
-          heading: "Contribution",
+          heading: "Key idea",
           body:
-            "The work introduces symbolic planning into vision-language image editing so that complex edits can be organized as explicit steps rather than a single opaque generation process."
+            "The central idea is to introduce symbolic planning into the editing process, turning complex instructions into explicit intermediate steps. This improves interpretability and makes the overall transformation pipeline more structured and controllable."
         },
         {
-          heading: "Context",
+          heading: "Why it matters",
           body:
-            "This direction connects robust vision with trustworthy multimodal systems and controllable image transformation."
+            "This direction connects robust visual modeling with trustworthy multimodal systems and reflects my broader interest in controllable, interpretable image understanding and generation."
         }
       ]
     },
@@ -159,6 +170,9 @@ window.siteData = {
       authors:
         "Delali Fiasam, L., Rao, Y., Sey, C., Aggrey, S. E. B., Kodjiku, S. L., Agyekum, K. O. B. O., Razafindratovolahy, A., Adjei-Mensah, I., Ukwuoma, C. C., Sam, F.",
       venue: "Journal of King Saud University: Computer and Information Sciences, 2025",
+      figure: "assets/figures/dawfa-figure.png",
+      figureCaption:
+        "A conceptual depiction of DAW-FA: adapting across domains through weighting and attention to support more consistent MRI harmonization.",
       summary:
         "A contribution to unsupervised MRI harmonization through domain-aware weighting and fine-grain attention under cross-domain variability.",
       pdf: "",
@@ -168,17 +182,17 @@ window.siteData = {
         {
           heading: "Overview",
           body:
-            "DAW-FA addresses unsupervised MRI harmonization under domain variability, extending my research interests toward robustness in medical imaging."
+            "DAW-FA addresses unsupervised MRI harmonization under strong domain variability. The work extends my research interests toward robustness in medical imaging, where distribution shift and acquisition variability are central challenges."
         },
         {
-          heading: "Contribution",
+          heading: "Key idea",
           body:
-            "The paper studies domain-aware adaptive weighting and fine-grain attention for stronger harmonization across heterogeneous imaging distributions."
+            "The paper studies domain-aware adaptive weighting together with fine-grain attention, allowing the method to better align heterogeneous imaging distributions without relying on paired supervision."
         },
         {
-          heading: "Context",
+          heading: "Why it matters",
           body:
-            "It reflects a broader interest in adaptation under shift, beyond standard image enhancement scenarios."
+            "It reflects a broader interest in adaptive learning under shift, showing how the same robustness questions that motivate my enhancement work also matter in medically relevant imaging settings."
         }
       ]
     },
@@ -187,6 +201,9 @@ window.siteData = {
       title: "Additional manuscripts under review",
       authors: "Including submissions to IEEE TPAMI, IEEE Sensors Journal, and Signal Processing",
       venue: "Under review",
+      figure: "assets/figures/under-review-figure.svg",
+      figureCaption:
+        "A placeholder visual representing current manuscript activity across robustness, enhancement, and related vision problems.",
       summary:
         "Ongoing work on robust visual modeling, enhancement, and related perception problems is currently under review in several venues.",
       pdf: "",
