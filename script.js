@@ -38,7 +38,8 @@ function fillHero() {
   byId("hero-location").textContent = data.location;
 
   byId("contact-text").textContent = data.contact;
-  byId("footer-text").textContent = data.footer;
+  const lastUpdated = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  byId("footer-text").textContent = `${data.footer} | Last updated: ${lastUpdated}`;
   document.querySelector(".brand-mark").textContent = data.name.charAt(0).toUpperCase();
 }
 
@@ -220,4 +221,6 @@ renderList("professional-list", data.experience.professional);
 renderList("leadership-list", data.experience.leadership);
 setupCitationModal();
 highlightActiveSection();
+
+
 
