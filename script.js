@@ -159,22 +159,52 @@ function setupCitationModal() {
 }
 
 function highlightActiveSection() {
-  const sections = document.querySelectorAll("main section[id]");
+  const sections = [...document.querySelectorAll("main section[id]")];
   const links = [...document.querySelectorAll(".site-nav a")];
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
-        links.forEach((link) => {
-          link.classList.toggle("active", link.dataset.section === entry.target.id);
-        });
-      });
-    },
-    { rootMargin: "-30% 0px -55% 0px", threshold: 0.1 }
-  );
-  sections.forEach((section) => observer.observe(section));
+  if (!sections.length || !links.length) {
+    return;
+  }
+
+  function setActive(id) {
+    links.forEach((link) => {
+      link.classList.toggle("active", link.dataset.section === id);
+    });
+  }
+
+  function updateActiveSection() {
+    const header = document.querySelector(".site-header");
+    const headerOffset = (header ? header.getBoundingClientRect().height : 0) + 24;
+    const scrollPosition = window.scrollY + headerOffset;
+
+    let activeId = sections[0].id;
+    sections.forEach((section) => {
+      if (scrollPosition >= section.offsetTop) {
+        activeId = section.id;
+      }
+    });
+
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+      activeId = sections[sections.length - 1].id;
+    }
+
+    setActive(activeId);
+  }
+
+  let ticking = false;
+  function onScroll() {
+    if (ticking) {
+      return;
+    }
+    ticking = true;
+    window.requestAnimationFrame(() => {
+      updateActiveSection();
+      ticking = false;
+    });
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", updateActiveSection);
+  updateActiveSection();
 }
 
 fillHero();
@@ -190,3 +220,4 @@ renderList("professional-list", data.experience.professional);
 renderList("leadership-list", data.experience.leadership);
 setupCitationModal();
 highlightActiveSection();
+

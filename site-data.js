@@ -56,6 +56,7 @@ window.siteData = {
       summary:
         "A tone-oriented formulation for efficient low-light image enhancement that links perceptual quality with computational practicality.",
       pdf: "papers/TOVO-paper.pdf",
+      github: "https://github.com/r-annicet/tovo",
       bibtex:
         "@article{razafindratovolahy2026tovo,\n  title={TOVO: Tone-Oriented Vision Optimization for Efficient Low-Light Image Enhancement},\n  author={Razafindratovolahy, Annicet and Rao, Yunbo and others},\n  journal={Signal Processing},\n  year={2026},\n  doi={10.1016/j.sigpro.2026.110540}\n}",
       sections: [
@@ -118,6 +119,7 @@ window.siteData = {
       summary:
         "A lightweight low-light enhancement framework driven by exposure-aware non-reference losses for robust learning without heavy supervision.",
       pdf: "papers/s00530-026-02295-w.pdf",
+      github: "https://github.com/r-annicet/smile",
       bibtex:
         "@article{razafindratovolahy2026smile,\n  title={SMILE: Enhancing Low-Light Images in Lightweight Networks via Exposure-Aware Non-Reference Losses},\n  author={Razafindratovolahy, Annicet and Rao, Yunbo and others},\n  journal={Multimedia Systems},\n  year={2026},\n  doi={10.1007/s00530-026-02295-w}\n}",
       sections: [
@@ -250,3 +252,6 @@ window.siteData = {
     "For research conversations, collaborations, invited talks, or academic networking, feel free to get in touch by email.",
   footer: "Annicet Razafindratovolahy"
 };
+
+
+
